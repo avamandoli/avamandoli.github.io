@@ -12,7 +12,7 @@ lang: en-US
 title: "Ava Mandoli Portfolio"
 
 # A description of your site for meta tag, search engine results.
-description: "A portfolio of my data visualization projects."
+description: "A portfolio of my data visualization projects for POLI_SCI 390-0: Political Data Visualization."
 
 # The subpath of your site, e.g. /blog, for generating urls.
 baseurl: ""
@@ -32,16 +32,19 @@ navigation:
     url: /
   - text: About
     url: /about/
-  - text: Projects
-    url: /projects/
-  - text: CV
-    url: /cv/
+  - text: Visualization Blogs
+    url: /visualization-blogs/
+  - text: Short Form Blogs
+    url: /short-form-blogs/
+  - text: Final Assignment
+    url: /final-assignment/
 
 # The shortname for your Disqus site to enable comments.
-disqus: justgoodthemes
+disqus: avamandolidatavis
+
 
 # Colors
-accent_color: '#2d72d9'
+accent_color: '#CEEDCE'
 
 # Site footer
 footer:
