@@ -42,27 +42,33 @@ disqus: avamandolidatavis
 
 
 # Colors
-accent_color: '#045F5F'
+accent_color: '#4C787E'
 
 # Site footer
 footer:
   content: ""
   has_social: true
 
-# Plugins
+# Build Settings
+markdown: kramdown
+permalink: /:title
 plugins:
   - jekyll-paginate
+  - jekyll-sitemap
 
-# http://jekyllrb.com/docs/pagination/
-paginate: 3
-paginate_path: '/page:num/'
+paginate: 9
+paginate_path: "/page/:num"
+
+# Pages Path
+defaults:
+  - scope:
+      path: '_pages'
+    values:
+      permalink: /:basename:output_ext
 
 
-# Permalinks
-permalink: /:title
-
-# Conversion
-markdown: kramdown
+include:
+  - _pages
 
 # Sass
 sass:
