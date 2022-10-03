@@ -15,7 +15,7 @@ title: "Ava Mandoli Portfolio"
 description: "A portfolio of my data visualization projects for POLI_SCI 390-0: Political Data Visualization."
 
 # The subpath of your site, e.g. /blog, for generating urls.
-baseurl: "https//:avamandoli.github.io"
+baseurl: ""
 
 # The base hostname & protocol of your site for where absolute urls are needed.
 url: "https://scriptor-jekyll.netlify.com"
@@ -42,7 +42,7 @@ disqus: avamandolidatavis
 
 
 # Colors
-accent_color: '#CEEDCE'
+accent_color: '#DBF9DB'
 
 # Site footer
 footer:
