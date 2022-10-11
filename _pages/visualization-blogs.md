@@ -30,5 +30,32 @@ ggplot (gun_homicides_prop_selection, aes(x = Country, y = Prop))+
 
 2. This graph is really misleading because the Y axis is flipped. It makes it look as if the number of murders committed using firearms decreased after the “Stand Your Ground” law passed. For context, the law “allows those who feel a reasonable threat of death or bodily injury to ‘meet force with force’ rather than retreat.” Gun deaths actually increased significantly after that law was passed. The data itself seems accurate, it’s just the presentation of it that makes it unintuitive and misleading.
 
-3. 
+
+<img src="/images/stlprisonadmissions_graph.png">
+
+3. I filtered this data about St. Louis prison admission rates from a national dataset of US prison admissions by county. St. Louis is my hometown and I have seen the inequality between the city and the county firsthand. Redlining and discriminatory housing policies have contributed to the unequal distribution of resources to this day, which impacts community health metrics like prison admissions. This data visualization shows the discrepancy between prison admissions data in St. Louis County and St. Louis City across a selection of years they reported data for.
+
+```markdown
+#Load in packages
+
+library(tidyverse)
+library(dplyr)
+library(reshape2)
+
+prison_admissions <- read.csv("https://raw.githubusercontent.com/TheUpshot/prison-admissions/master/county-prison-admissions.csv")
+
+#Filter for St. Louis, MO data
+
+stl_prison_admissions <- prison_admissions %>% 
+  filter(county == "St. Louis city" | county == "St. Louis County" & state == "MO") %>% 
+  select(county, state, admitsPer10k2006, admitsPer10k2013, admitsPer10k2014)
+
+melt(stl_prison_admissions, id.vars = c('county', 'state')) -> melted_stl_prison_admissions
+
+ggplot(melted_stl_prison_admissions, aes(x = variable, y = value, fill = county)) +
+  geom_bar(position = "dodge", stat = "identity") +
+  scale_fill_discrete(name = "County", labels = c("St. Louis City", "St. Louis County")) +
+  scale_x_discrete(labels = c(2006, 2013, 2014)) +
+  labs (y = "Admission Number per 10k", x = "Year")
+```
 
