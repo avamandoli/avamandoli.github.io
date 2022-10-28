@@ -55,7 +55,7 @@ exec_oversight_freepress_byinternet <- ggplot(vdemdata_no_nas, aes(x = v2lgotovs
 
 exec_oversight_freepress_byinternet
 ```
-<img src="/Users/avamandoli/Desktop/POLI_SCI 390/saved_visualizations/exec_oversight_freepress_byinternet.jpeg">
+<img src="/images/exec_oversight_freepress_byinternet.jpeg">
 For this project, I focused on understanding the impact of the internet and media on both social and political indicators of democracy. The internet and the more traditional press both represent spaces for public opinion to be shared. Whether citizens are able to utilize these media in a way that accurately reflects their sentiments is a strong indicator of the level of civil liberties they have. The media is often called “the Fourth Estate,” as it theoretically has the ability to hold other positions of power to account. To see if this is truly the case, I graphed the level of executive oversight in relation to the freedom of the press in countries with high and low levels of internet censorship. According to VDem, “Executive oversight” is a measure of how likely it would be that a body other than the legislature would investigate executive branch officials if they were engaged in unconstitutional, illegal, or unethical activity. That likelihood does increase as freedom of the press increases in all countries, regardless of internet censorship. However, in countries with high levels of internet censorship, the rate of that increase is lower than in countries with low levels of internet censorship. Additionally, freedom of the press is much lower in countries with high levels of internet censorship. This indicates that the traditional press has become intertwined with the internet, so censorship of the internet is also censorship of much of the press. 
 
 
@@ -71,7 +71,7 @@ censorship_fos_w <- ggplot(vdemdata_middleeast, aes(x = v2mecenefm, y = v2cldisc
 
 censorship_fos_w
 ```
-<img src="/Users/avamandoli/Desktop/POLI_SCI 390/saved_visualizations/freedomofspeech_women_regional.jpeg">
+<img src="/images/freedomofspeech_women_regional.jpeg">
 Looking at more direct measures of freedom of speech for both women and men mirror graphs of freedom of the press. In the below visualization, an increase in the x-axis represents a decrease in government censorship of print and broadcast media. The freedom of print and broadcast media to share their unfiltered thoughts correlates with the freedom of discussion for women in civil society. To see if this trend changes depending on a country’s affluence, I also plotted the GDP per capita for each country. However, it appears that countries with higher GDP per capita do not necessarily have higher levels of freedom of discussion for women, and their governments censor media in rates on par with governments of less affluent countries. 
 
 
@@ -89,7 +89,7 @@ gdppc_regional <- ggplot(vdemdata_post1960, aes(x = v2cldiscw, col = as_factor(e
   
 gdppc_regional 
 ```
-<img src="/Users/avamandoli/Desktop/POLI_SCI 390/saved_visualizations/censorship_fos_w.jpeg">
+<img src="/images/censorship_fos_w.jpeg">
 While the relative affluence of countries does not seem to have a strong impact on womens’ freedom of speech, countries’ politico-geographic location does. Western Europe and North America have the highest levels of freedom of speech for women by far. The Middle East and North Africa have the lowest levels. Sub-Saharan Africa and Asia and the Pacific have medium-low levels; Latin America and the Caribbean and Eastern Europe and Central Asia have medium-high levels. 
 
 
@@ -111,7 +111,7 @@ regions_internet_censorship <- ggplot(vdemdata_2021, aes(x=e_regionpol_6C, fill 
 regions_internet_censorship
 ```
 
-<img src="/Users/avamandoli/Desktop/POLI_SCI 390/saved_visualizations/regions_by_internetcensorship_lvls.jpeg">
+<img src="/images/regions_by_internetcensorship_lvls.jpeg">
 I continued to look for other trends on a global scale using these six politico-geographic regions. While there are different amounts of countries in each region, looking at the proportion of high to low internet censorship levels helps us compare regions by internet freedom. These relationships somewhat mirror the previous visualization. Latin America and the Caribbean and Eastern Europe and Central Asia have similar proportions of countries with high internet censorship levels, just as they had similar levels of freedom of speech for women. Western Europe and North America have the most freedom from internet censorship by far. The Middle East and North Africa is the only region where there are more countries with high internet censorship than not. 
 
 
@@ -138,7 +138,7 @@ me_internet <- ggplot(vdemdata_middleeast_subset, aes(x = year, y= v2mecenefi_os
 me_justicef + me_internet +
   plot_layout(guides = 'collect')
 ```
-<img src="/Users/avamandoli/Desktop/POLI_SCI 390/saved_visualizations/me_justice4women_patchwork.jpeg">
+<img src="/images/me_justice4women_patchwork.jpeg">
 Because the Middle East and North Africa had both the lowest levels of freedom of speech for women and the highest proportion of countries with highly censored internet, I decided to take a closer look at the region. Given the recent protests in Iran over the death of Mahsa Amini and the Iranian government’s subsequent internet shutdowns, I decided to compare VDem’s data on access to justice for women and government censorship of internet. I created a subset of countries with relatively different socio-political environments and attempted to see if there was a relationship between access to justice for women and government internet censorship in each country. There appears to be some correlation in countries like Tunisia. In 2010, there was a sharp increase in internet freedom; since then, access to justice for women has steadily increased as well. Saudi Arabia shows a similar trend, although the level of internet freedom and access to justice for women are both significantly lower than in Tunisia. Iran and Syria, on the other hand, do not show such a strong correlation between the two variables. This may be because there are other variables such as the economy or civil unrest that have a stronger impact on the levels of these variables. 
 
 
@@ -165,5 +165,5 @@ internet_censorship_levels_named <- c("0" = "High levels of Internet censorship"
 genderedpower_eduequality_byinternet
 ```
 
-<img src="/Users/avamandoli/Desktop/POLI_SCI 390/saved_visualizations/genderedpower_eduequality_byinternet.jpeg">>
+<img src="/images/genderedpower_eduequality_byinternet.jpeg">>
 Looking at internet censorship also helps us understand other socio-political factors such as educational equality and how positions of power are distributed by gender. In the above graph, we see that equality in both spheres have a positive relationship with each other. However, the positive relationship is significantly stronger in countries with low levels of internet censorship. Ultimately, while internet access is certainly not the only thing impacting measures of democracy, it is one factor that can help explain global trends.
