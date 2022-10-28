@@ -167,3 +167,7 @@ genderedpower_eduequality_byinternet
 
 ![# Visualization 6: Relationship between political power distributed by gender and educational equality, compared in countries with and without internet access] <img src="/images/genderedpower_eduequality_byinternet.jpeg">
 Looking at internet censorship also helps us understand other socio-political factors such as educational equality and how positions of power are distributed by gender. In the above graph, we see that equality in both spheres have a positive relationship with each other. However, the positive relationship is significantly stronger in countries with low levels of internet censorship. Ultimately, while internet access is certainly not the only thing impacting measures of democracy, it is one factor that can help explain global trends.
+
+Works cited:
+- https://www.theguardian.com/world/2022/sep/22/iran-blocks-capitals-internet-access-as-amini-protests-grow 
+- https://www.v-dem.net/data/the-v-dem-dataset/
