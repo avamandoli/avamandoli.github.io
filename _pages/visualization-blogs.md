@@ -7,7 +7,7 @@ permalink: /visualization-blogs/
 ---
 
 
-## Visualization Blog #1: Controversial Data
+### Visualization Blog #1: Controversial Data
 
 <img src="/images/gun_homicides_developed_countries.jpg">
 
@@ -24,14 +24,14 @@ ggplot (gun_homicides_prop_selection, aes(x = Country, y = Prop))+
      scale_x_discrete (“Country”, labels = unique(gun_homicides_prop_selection$Country))
 ```
 
-**--**
+
 
 <img src="/images/gun_deaths_florida.png">
 
 2) The graph above is really misleading because the Y axis is flipped. It makes it look as if the number of murders committed using firearms decreased after the “Stand Your Ground” law passed. For context, the law “allows those who feel a reasonable threat of death or bodily injury to ‘meet force with force’ rather than retreat.” Gun deaths actually increased significantly after that law was passed. The data itself seems accurate, it’s just the presentation of it that makes it unintuitive and misleading.
 
 
-**--**
+
 
 <img src="/images/stlprisonadmissions_graph.png">
 
@@ -61,7 +61,7 @@ ggplot(melted_stl_prison_admissions, aes(x = variable, y = value, fill = county)
   labs (y = "Admission Number per 10k", x = "Year")
 ```
 
-**--**
+**----------**
 
 ## Visualization Blog #2: Adding Uncertainty
 
@@ -137,7 +137,7 @@ election_turnout_usa_decades
 
 
 ```markdown
-# Visualization 2: Density + interval plot with boxplot
+### Visualization 2: Density + interval plot with boxplot
 
 usa_voting_bydecade <- ggplot(summary_data, aes(xdist = dist_normal(mean, sd), y = as_factor(decades),
              fill = as_factor(decades))) +
