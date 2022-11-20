@@ -12,7 +12,7 @@ lang: en-US
 title: "Ava Mandoli Portfolio"
 
 # A description of your site for meta tag, search engine results.
-description: "A portfolio of my data visualization projects for POLI_SCI 390-0: Political Data Visualization."
+description: "A portfolio of my data visualization projects."
 
 # The subpath of your site, e.g. /blog, for generating urls.
 baseurl: ""
