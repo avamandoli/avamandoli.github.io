@@ -166,3 +166,29 @@ usa_voting_bydecade <- ggplot(summary_data, aes(xdist = dist_normal(mean, sd), y
 usa_voting_bydecade
 ```
 <img src="/Users/avamandoli/Documents/GitHub/avamandoli.github.io/images/usa_voting_bydecade_densityplot.png>
+
+
+**----------**
+
+
+
+
+## Visualization Blog #3: Final Project Proposal
+
+
+
+Studying global history has taught me to think a lot about big-picture trends. One common question that we examine is what role individual leaders play in shaping these trends and the development of a country or movement. While it is impossible to entirely disentangle one individual’s impact from the complex web of circumstances that influence a movement, we can look for patterns between the characteristics of leaders and their environments. Looking at leaders of rebel organizations can be useful in this search because such organizations arise out of opposition to the status quo. This can provide insight into what people want – and what lengths they are willing to go to in order to get it – under different political conditions. 
+
+I’m interested in answering the question, “How do rebel leaders look and act in countries with different levels of political participation/freedom?” 
+
+<a href="https://www.rebelleaders.org/">The Rebel Organization Leaders (ROLE) Database</a> , compiled by investigators Benjamin Acosta, Reyko Huang and Daniel Silverman, seeks to uncover how rebel leaders “shape the dynamics of armed conflicts, and contemporary world politics more broadly.” This data will be particularly useful in investigating how individual leaders impact the development of a movement because it provides biographical information about rebel, insurgent, and terrorist leaders who were active in civil wars between 1980 and 2011. 
+ 
+I may also use the <a href="https://www.waarproject.com/">Women’s Activities in Armed Rebellion (WAAR) Project dataset</a>, depending on if they have overlapping data. This could help me understand what role women have played in different rebel movements. I’d be interested to see if women are more or less involved in rebel movements in countries where women are not granted a high level of political participation. 
+
+To address my research question, I plan to visualize the relationship between how elite or democratic a country’s leadership is and how democratic/elite rebel movements are. I’d also like to visualize how politically active women are in the country versus how active they are in rebel movements. To understand if there are patterns among rebel leaders, I’d like to visualize what traits rebel leaders most commonly share by mapping size to a bubble graph. 
+
+Some visualizations that are inspiring me are <a href="https://www.pewresearch.org/fact-tank/2019/04/18/a-look-at-how-people-around-the-world-view-climate-change/ft_19-04-18_climatechangeglobal_since2013concerns/">this one by Pew Research</a>  and <a href="https://twitter.com/spren9er/status/1195826547724374018">this one by Dr. Torsten Sprenger</a>.  I want to make something like the Pew Research graph to illustrate the number of rebel leaders in different countries over time. I also want to emulate the visualization by Dr. Sprenger to show what the most common attributes rebel leaders have in common are. 
+
+
+
+
