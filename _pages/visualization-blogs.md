@@ -165,7 +165,7 @@ usa_voting_bydecade <- ggplot(summary_data, aes(xdist = dist_normal(mean, sd), y
 
 usa_voting_bydecade
 ```
-<img src="/Users/avamandoli/Documents/GitHub/avamandoli.github.io/images/usa_voting_bydecade_densityplot.png>
+<img src="/images/usa_voting_bydecade_densityplot.png>
 
 
 **----------**
