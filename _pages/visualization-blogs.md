@@ -54,11 +54,19 @@ stl_prison_admissions <- prison_admissions %>%
 
 melt(stl_prison_admissions, id.vars = c('county', 'state')) -> melted_stl_prison_admissions
 
+#Create visualization
 ggplot(melted_stl_prison_admissions, aes(x = variable, y = value, fill = county)) +
   geom_bar(position = "dodge", stat = "identity") +
-  scale_fill_discrete(name = "County", labels = c("St. Louis City", "St. Louis County")) +
+  scale_fill_brewer(name = "County", labels = c("St. Louis City", "St. Louis County")) +
   scale_x_discrete(labels = c(2006, 2013, 2014)) +
-  labs (y = "Admission Number per 10k", x = "Year")
+  labs (title = "Prison Admissions per 10k Citizens in \n St. Louis City versus St. Louis County", y = "Admission Number per 10k", x = "Year")+
+  theme_pander()+
+  theme(axis.title.x = element_text(family = "Avenir", vjust = -2),
+        axis.title.y = element_text(family = "Avenir", vjust = 3),
+        axis.text = element_text(family = "Avenir"),
+        legend.text = element_text(family = "Avenir"),
+        legend.title = element_text(family = "Avenir"),
+        plot.margin = margin(1, 1, 1, 1, "cm"))
 ```
 
 **----------**
