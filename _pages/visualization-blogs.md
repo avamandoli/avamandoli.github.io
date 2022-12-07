@@ -73,107 +73,13 @@ ggplot(melted_stl_prison_admissions, aes(x = variable, y = value, fill = county)
 
 ## Visualization Blog #2: Adding Uncertainty
 
-```markdown
-# typical load in of packages 
-packages <- c("tidyverse", "reshape2", "fauxnaif", "gganimate", "ggthemes",
-              "stringr", "gridExtra", "gifski", "png", "ggrepel", "scales",
-              "lubridate", "paletteer", "GGally", "systemfonts", "extrafont", 
-              "colorspace", "dplyr", "distributional"
-              )
+<img src="/images/usa_voting_bydecade_lineplot.jpg">
 
-# install.packages("devtools")
-# devtools::install_github("vdeminstitute/vdemdata")
+1) I created this visualization to show the trend of election turnout in the United States since 1970. Today, we often hear that less and less people are voting. Whether it's door-knocking or "get out the vote" campaigns, politicians and community leaders alike are attempting to reverse this trend. But when did this trend of low voter turnout actually start, and it it as bad as people say? Looking at data from the Varieties of Democracy dataset, we see that this trend started around the 1970s or 1980s. However, adding error bars reveals something else: the downward trend from the 1970s to the 2000s may not be as dramatic as it looks because the error bars overlab significantly with each other. We can definiitely see a drop in the 2010s, but before that, the error bars show we should not be too quick to say election turnout has dropped precipitously in the last few decades. 
 
-lapply(packages, require, character.only = TRUE)
-loadfonts(device = "all")
-
-# read in data 
-vdemdata <- vdemdata::vdem
-
-# subset the data
-election_turnout_usa <- vdemdata %>% 
-  filter(country_name == "United States of America", year >= 1970) %>% 
-  select(country_name, year, v2eltrnout) %>% 
-  filter(!is.na(v2eltrnout)) 
-```
-
-```markdown
-summary_data <- election_turnout_usa %>% 
-  mutate(
-    # Create decades categories
-    decades = dplyr::case_when(
-      year >= 1970 & year <=1979 ~ "1970s",
-      year >= 1980 & year <=1989 ~ "1980s",
-      year >= 1990 & year <=1999 ~ "1990s",
-      year >= 2000 & year <=2009 ~ "2000s",
-      year >= 2010 & year <=2019 ~ "2010s",
-      year >= 2020 & year <=2029 ~ "2020s"
-    ),
-    # Convert to factor
-    decades = factor(
-      decades,
-      level = c("1970s", "1980s", "1990s", "2000s", "2010s", "2020s")
-    )) %>% 
-  # Calculate mean and SD for each decade
-  group_by(decades) %>% 
-   summarise(
-    n=n(),
-    mean=mean(v2eltrnout),
-    sd=sd(v2eltrnout)
-  ) %>%
-  # Calculate SE and 95% confidence interval
-  mutate(se=sd/sqrt(n))  %>%
-  mutate(ci=se * qt((1-0.05)/2 + .5, n-1))
-
-```
-
-```markdown
-# Visualization 1: errorbars on line graph 
-election_turnout_usa_decades <- ggplot(summary_data, aes(x = decades, y = mean))+ 
-  geom_line(group = 1) + 
-  ylim(0,100)+
-  geom_errorbar(aes(ymin= mean-se, ymax = mean + se), width = 0.2) +
-  labs(title = "Election turnout across decades in the United States", y = "Average election turnout (%)", x = "") +
-  theme_minimal()
-
-# Could also do confidence interval: ymin = (mean-(se*1.96)), ymax = (mean + (se*1.96))
-
-election_turnout_usa_decades
-```
-<img src="/images/usa_voting_bydecade_lineplot.png">
-
-
-
-```markdown
-### Visualization 2: Density + interval plot with boxplot
-
-usa_voting_bydecade <- ggplot(summary_data, aes(xdist = dist_normal(mean, sd), y = as_factor(decades),
-             fill = as_factor(decades))) +
-  stat_halfeye(
-    adjust = .5,
-    width = 1, 
-    # Interval shows IQR and 95% data range
-    .width = c(.5, .95)
-  ) + 
-  geom_boxplot(
-    width = 0.12, 
-    outlier.colour = NA, 
-    alpha = 0.5
-  ) +
-  xlim(0, 100)+
-  scale_y_discrete(labels = c("1970s", 
-                              "1980s", 
-                              "1990s", 
-                              "2000s", 
-                              "2010s",
-                              "2020s"))+
-  guides(fill = "none")+
-  labs(x= "Average election turnout (%)", y = "", title = "U.S. Election turnout across decades")+
-  theme_minimal()
-
-usa_voting_bydecade
-```
 <img src="/images/usa_voting_bydecade_densityplot.jpg">
+
+2) This second visualization is another way to represent the uncertainty surrounding U.S. election turnout across decades that highlights the spread across each year. For example, it shows that in the 2000s, there was a very wide range in election turnouts, while in the 2010s the turnout was more consistently around 55%. 
 
 
 **----------**
