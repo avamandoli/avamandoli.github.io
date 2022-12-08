@@ -71,6 +71,8 @@ ggplot(melted_stl_prison_admissions, aes(x = variable, y = value, fill = county)
 
 **----------**
 
+<hr>
+
 ## Visualization Blog #2: Adding Uncertainty
 
 <img src="/images/usa_voting_bydecade_lineplot.jpg">
@@ -84,7 +86,7 @@ ggplot(melted_stl_prison_admissions, aes(x = variable, y = value, fill = county)
 
 **----------**
 
-
+<hr>
 
 
 ## Visualization Blog #3: Final Project Proposal
