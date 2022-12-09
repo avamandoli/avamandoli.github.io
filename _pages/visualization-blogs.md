@@ -69,7 +69,7 @@ ggplot(melted_stl_prison_admissions, aes(x = variable, y = value, fill = county)
         plot.margin = margin(1, 1, 1, 1, "cm"))
 ```
 
-**----------**
+
 
 <hr>
 
@@ -84,7 +84,6 @@ ggplot(melted_stl_prison_admissions, aes(x = variable, y = value, fill = county)
 2) This second visualization is another way to represent the uncertainty surrounding U.S. election turnout across decades that highlights the spread across each year. For example, it shows that in the 2000s, there was a very wide range in election turnouts, while in the 2010s the turnout was more consistently around 55%. 
 
 
-**----------**
 
 <hr>
 
@@ -104,7 +103,3 @@ I may also use the <a href="https://www.waarproject.com/">Women’s Activities i
 To address my research question, I plan to visualize the relationship between how elite or democratic a country’s leadership is and how democratic/elite rebel movements are. I’d also like to visualize how politically active women are in the country versus how active they are in rebel movements. To understand if there are patterns among rebel leaders, I’d like to visualize what traits rebel leaders most commonly share by mapping size to a bubble graph. 
 
 Some visualizations that are inspiring me are <a href="https://www.pewresearch.org/fact-tank/2019/04/18/a-look-at-how-people-around-the-world-view-climate-change/ft_19-04-18_climatechangeglobal_since2013concerns/">this one by Pew Research</a>  and <a href="https://twitter.com/spren9er/status/1195826547724374018">this one by Dr. Torsten Sprenger</a>.  I want to make something like the Pew Research graph to illustrate the number of rebel leaders in different countries over time. I also want to emulate the visualization by Dr. Sprenger to show what the most common attributes rebel leaders have in common are. 
-
-
-
-
