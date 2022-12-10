@@ -1,0 +1,159 @@
+---
+title: "Rebel Organization Leaders Interactive Map"
+author: "Ava Mandoli"
+date: "`r Sys.Date()`"
+output:
+  flexdashboard::flex_dashboard:
+    vertical_layout: scroll
+    theme: paper
+    source_code: embed
+---
+
+```{r setup, include=FALSE}
+
+#install.packages("flexdashboard") # need to install this first. 
+library(dplyr)  # tidy data manipulation
+library(leaflet)  # interative mapping
+library(DT)  # interactive tables
+library(crosstalk)  # inter-widget interactivity
+library(haven)
+library(flexdashboard)
+library(tidyverse)
+library(rgeos)
+library(rworldmap)
+
+ROLE_dataset <- read_csv("/Users/avamandoli/Desktop/POLI_SCI 390/ROLE_dataset/ROLE_dataset.csv")
+
+wmap <- getMap(resolution = "high")
+
+# get centroids
+centroids <- gCentroid(wmap, byid = TRUE)
+
+centroids <- as.data.frame(centroids)
+centroids <-tibble::rownames_to_column(centroids, "country")
+
+
+# make cohesive dataset
+role_data_coords <- left_join(ROLE_dataset, centroids, by = c("stname"= "country")) 
+role_data_coords_distinct <-  role_data_coords %>% 
+ distinct(fullbirthname, popularname, stname, x, y, groupname, gender, religion, family, education, entrymethod, educwest)
+  
+
+role_data_coords_distinct$family <- recode(role_data_coords_distinct$family, 
+         "0" = "No",
+         "1" = "Yes",
+         "N/A" = "N/A") 
+
+role_data_coords_distinct$educwest <- recode(role_data_coords_distinct$educwest, 
+         "0" = "No",
+         "1" = "Yes",
+         "N/A" = "N/A") 
+
+role_data_coords_distinct <- role_data_coords_distinct %>%
+       mutate_if(is.character, ~replace_na(., "N/A"))
+
+write_dta(role_data_coords_distinct, "ROLE.dta")
+
+role <- read_dta("ROLE.dta")
+role$x <- jitter(role$x, factor = 50)
+role$y <- jitter(role$y, factor = 50)
+
+role_shared <- SharedData$new(role)
+```
+
+Interactives {data-icon="ion-stats-bars"}
+=====================================  
+
+Column {data-width=425}
+-------------------------------------
+
+### Filters
+
+```{r filters, fig.width=7, fig.height = 7}
+
+filter_select(
+  id = "country",
+  label = "Country",
+  sharedData = role_shared,
+  group = ~stname
+)
+
+filter_select(
+  id = "group",
+  label = "Leader Organization",
+  sharedData = role_shared,
+  group = ~groupname
+)
+
+bscols(
+     
+    filter_checkbox(
+    id = "gender",
+    label = "Leader Gender",
+    sharedData = role_shared,
+    group = ~gender
+    ),
+    
+    filter_checkbox(
+    id = "family_connect",
+    label = "Does leader come from an elite or well-connected background?",
+    sharedData = role_shared,
+    group = ~family
+  ),
+  
+  filter_checkbox(
+    id = "education",
+    label = "Education Level of Rebel Leader",
+    sharedData = role_shared,
+    group = ~education
+  ),
+  
+  filter_checkbox(
+    id = "educwest",
+    label = "Did the leader obtain a degree in a Western country?",
+    sharedData = role_shared,
+    group = ~educwest
+  ),
+  
+  filter_checkbox(
+    id = "entry_method",
+    label = "How did the individual come to lead the organization?",
+    sharedData = role_shared,
+    group = ~entrymethod
+  )
+)
+```
+
+### Interactive data table
+
+```{r}
+DT::datatable(role_shared, options = list(
+  pageLength = 15
+))
+```
+
+
+Column {.tabset}
+-------------------------------------
+    
+### Interactive map
+
+```{r map}
+
+leaflet(role_shared, width = "100%", height = 800) %>%
+    addTiles() %>%
+    addMarkers(~x, ~y, 
+               labelOptions = labelOptions(noHide = F, direction = 'auto'),
+               popup = ~paste("<b>Name:</b>", fullbirthname, "<br>",
+                              "<b>Popular Name:</b>", popularname, "<br>", 
+                              "<b>Group Name:</b>", groupname, "<br>", 
+                              "<b>Religion:</b>", religion, "<br>",
+                              "<b>Education Level:</b>", education, "<br>",
+                              "<b>Gender:</b>", gender)) 
+```
+
+### About
+
+In studying history and political science, we often look to the actions of official leaders to explain the trajectory of different countries. While governmental leaders’ decisions certainly cannot explain everything about how history unfolds, their thoughts can provide insight into why governments decide to take certain actions over others. However, scholars have long neglected to give this same consideration to rebel organization leaders. The goals of rebel organizations often illuminate how people feel about their governments or their countries. They show what people wish was different about their country or the world, and their popularity indicates how widespread that qualm is. However, just as the biographical traits and personalities of official leaders influence how a country works, the traits and personalities of rebel organization leaders can be a valuable tool to understand why rebel organizations are the way they are. I created this dashboard with data from the Rebel Organization Leaders (ROLE) Database, which was developed by investigators Benjamin Acosta, Reyko Huang, and Daniel Silverman. The goal of this interactive dashboard is to illustrate the distribution of biographical characteristics across rebel leaders globally. Looking at the spread of factors about rebel leaders may help us understand why certain types of rebel organizations pop up in some regions and not others.
+
+
