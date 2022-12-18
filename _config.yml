@@ -34,8 +34,8 @@ navigation:
     url: /visualization-blogs/
   - text: Short Form Blogs
     url: /short-form-blogs/
-  - text: Final Assignment
-    url: /final-assignment/
+  - text: Final Project
+    url: /final-project-dashboard/
 
 # The shortname for your Disqus site to enable comments.
 disqus: avamandolidatavis
