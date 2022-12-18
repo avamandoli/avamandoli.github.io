@@ -5,7 +5,3 @@ description:
 feature_image: 
 permalink: /final-assignment/
 ---
-
-```markdown
-
-```
