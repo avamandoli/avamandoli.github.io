@@ -30,19 +30,16 @@ google_analytics: ""
 navigation:
   - text: Home
     url: /
-  - text: Visualization Blogs
-    url: /visualization-blogs/
-  - text: Short Form Blogs
-    url: /short-form-blogs/
-  - text: Final Project
-    url: /final-project-dashboard/
+  - text: Classwork
+    url: /classwork/
+
 
 # The shortname for your Disqus site to enable comments.
 disqus: avamandolidatavis
 
 
 # Colors
-accent_color: '#4C787E'
+accent_color: '#ffffff'
 
 # Site footer
 footer:
