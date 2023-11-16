@@ -7,6 +7,7 @@ permalink: /short-form-blogs/
 ---
 
 ## Short Form Blog #1: Motivating a Point 
+# STAT 301: Political Data Visualization
 
 While the internet can be a democratic platform for free expression and a powerful tool for community organizing, it can also be leveraged by governments to surveil and suppress citizens’ sentiments. It can be a double-edged sword that has very different impacts depending on who wields power over it. 
 Recent protests in Iran over the death of a 22-year-old woman, Mahsa Amini, in the custody of the country’s “morality police” have reignited dialogue about the role of the internet in civic life. The Iranian government has shut off the internet in parts of Tehran and Kurdistan and blocked social media platforms such as Instagram and WhatsApp, “in an attempt to curb a growing protest movement that has relied on social media to document dissent” (Strzyżyńska, “Iran blocks capital’s internet access as Amini protests grow,” The Guardian). Investigating the relationship between internet access and variables like civil liberties is crucial to understanding how crises like these play out.
