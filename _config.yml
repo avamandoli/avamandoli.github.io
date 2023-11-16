@@ -12,7 +12,7 @@ lang: en-US
 title: "Ava Mandoli Portfolio"
 
 # A description of your site for meta tag, search engine results.
-description: "A portfolio of my data visualization projects."
+
 
 # The subpath of your site, e.g. /blog, for generating urls.
 baseurl: ""
@@ -39,7 +39,7 @@ disqus: avamandolidatavis
 
 
 # Colors
-accent_color: '#ffffff'
+accent_color: '#7a566e'
 
 # Site footer
 footer:

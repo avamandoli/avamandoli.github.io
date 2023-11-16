@@ -3,7 +3,7 @@ layout: page
 title: Visualization Blogs
 description: 
 feature_image: 
-permalink: /visualization-blogs/
+permalink: /classwork/visualization-blogs/
 ---
 
 

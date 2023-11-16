@@ -3,7 +3,7 @@ layout: page
 title: Short Form Blogs
 description: 
 feature_image: 
-permalink: /short-form-blogs/
+permalink: /classwork/shortblogs
 ---
 
 ## Short Form Blog #1: Motivating a Point 
