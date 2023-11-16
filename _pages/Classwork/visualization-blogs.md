@@ -7,8 +7,8 @@ permalink: /classwork/visualization-blogs/
 ---
 
 
-## Visualization Blog #1
-# STAT 301: Political Data Visualization
+### Visualization Blog #1
+### STAT 301: Political Data Visualization
 
 
 <img src="/images/stlprisonadmissions_graph.png">
