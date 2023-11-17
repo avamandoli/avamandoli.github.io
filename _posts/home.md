@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Home
-description: A bit about me
+title: 
+description: 
 feature_image: 
 permalink: /home
 ---
