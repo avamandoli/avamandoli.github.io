@@ -21,7 +21,7 @@ baseurl: ""
 url: "https://scriptor-jekyll.netlify.com"
 
 # Favicon
-favicon: images/favicon.png
+favicon: images/faviconicon.png
 
 # Google Analytics id, e.g. "UA-NNNNNNNN-N"
 google_analytics: ""
