@@ -4,6 +4,7 @@ title: Visualization Blogs
 description: 
 feature_image: 
 permalink: /classwork/visualization-blogs/
+parent: Classwork
 ---
 
 

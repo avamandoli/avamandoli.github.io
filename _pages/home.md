@@ -1,9 +1,9 @@
 ---
 layout: page
-title: About me
-description: ""
+title: Home
+description: A bit about me
 feature_image: 
-permalink: /
+permalink: /home
 ---
 <div style="display: flex;">
   <div style="flex: 50%; padding: 20px;">
